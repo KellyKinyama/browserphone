@@ -7,60 +7,6 @@ const ChatApp=()=>{
 
     const [showDial,setShowDial]=useState(false)
 
-
-    function ApplyThemeColor() {
-        //UiThemeStyle = light | dark | system (can change at any time)
-        var cssUrl = hostingPrefix + "phone.light.css";
-        var cssUrl=`src/assets/phone.light.css`;
-        var wallpaperUrl = hostingPrefix + "" + imagesDirectory + "" + wallpaperLight;
-        console.log("cssUrl: ",cssUrl)
-
-        // Overall Theme
-        // if (UiThemeStyle == "system") {
-        //     if (window.matchMedia) {
-        //         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        //             cssUrl = hostingPrefix + "phone.dark.css";
-        //             wallpaperUrl = hostingPrefix + "" + imagesDirectory + "" + wallpaperDark;
-        //         } else {
-        //             cssUrl = hostingPrefix + "phone.light.css";
-        //             wallpaperUrl = hostingPrefix + "" + imagesDirectory + "" + wallpaperLight;
-        //         }
-        //     } else {
-        //         cssUrl = hostingPrefix + "phone.dark.css";
-        //     }
-        // } else if (UiThemeStyle == "light") {
-        //     cssUrl = hostingPrefix + "phone.light.css";
-        //     wallpaperUrl = hostingPrefix + "" + imagesDirectory + "" + wallpaperLight;
-        // } else if (UiThemeStyle == "dark") {
-        //     cssUrl = hostingPrefix + "phone.dark.css";
-        //     wallpaperUrl = hostingPrefix + "" + imagesDirectory + "" + wallpaperDark;
-        // } else {
-        //     // Defaults to light
-        //     cssUrl = hostingPrefix + "phone.light.css";
-        //     wallpaperUrl = hostingPrefix + "" + imagesDirectory + "" + wallpaperLight;
-        // }
-        if ($("#colorSchemeMode").length) {
-            // Style Sheet Added
-        } else {
-            $("head").append('<link rel="stylesheet" id="colorSchemeMode" />');
-        }
-        $("#colorSchemeMode").attr("href", cssUrl);
-
-        // Wallpaper
-        if ($("#colorSchemeModeSheet").length) {
-            $("#colorSchemeModeSheet").empty();
-        } else {
-            $("head").append("<style id='colorSchemeModeSheet'></style>");
-        }
-        var wallpaperStyle = ".wallpaperBackground { background-image:url('" + wallpaperUrl + "') }";
-        $("#colorSchemeModeSheet").text(wallpaperStyle);
-    }
-
-    useEffect(()=>{
-        ApplyThemeColor()
-    })
-
-
     return(
 
         

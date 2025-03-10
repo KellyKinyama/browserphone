@@ -10,7 +10,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: -999;
 }
 .loading span{
     color: #222222;
@@ -356,7 +356,7 @@ body {
     left: 0px;
     
     position: fixed !important;
-    z-index: 99999999;
+    /* z-index: 99999999; */
     min-width: 200px !important;
     box-sizing: border-box;
     padding: 5px 0px 5px 0px !important;
@@ -456,7 +456,7 @@ body {
 
 .ui-menu .ui-widget-header{
     font-size: 16px !important;
-    cursor: unset !important;
+    /* cursor: unset !important; */
 }
 
 .ui-icon, .ui-widget-content .ui-icon {
@@ -795,7 +795,7 @@ input[type=range]{
     top:0;
     left:0;
     width:100%;
-    z-index: 1;
+    /* z-index: 1; */
     padding: 5px;
     box-sizing: border-box;
 }
@@ -889,7 +889,7 @@ input[type=range]{
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    z-index: 10;
+    /* z-index: 10; */
 }
 
 .contact {
@@ -1008,7 +1008,7 @@ input[type=range]{
     top:0px;
     left:0px;
     width:100%;
-    z-index: 1;
+    /* z-index: 1; */
     padding: 5px;
     box-sizing: border-box;
 }
@@ -1327,7 +1327,7 @@ input[type=range]{
     left: 0px;
     width: 100%;
     height: 100%;
-    z-index: 50;
+    /* z-index: 50; */
     padding: 0px;
     margin: 0px;
 
@@ -1337,7 +1337,7 @@ input[type=range]{
 .StageContainer{
     width: 100%;
     height: calc(100% - 80px); /* 80 is the height of the preview area */
-    z-index: 80; /* Video Levels are 80-90 */
+    /* z-index: 80; Video Levels are 80-90 */
     position: relative;
 }
 
@@ -1377,7 +1377,7 @@ input[type=range]{
     text-shadow: 1px 1px 1px rgb(0 0 0 / 50%);
     font-size: 100%;
     overflow: hidden;
-    z-index: 999;
+    /* z-index: 999; */
 }
 .StageContainer .VideosContainer .VideoWrapper .Actions{
     position: absolute;
@@ -1387,14 +1387,14 @@ input[type=range]{
     color: #cccccc;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 50%);
     font-size: 100%;
-    z-index: 999;
+    /* z-index: 999; */
 }
 .StageContainer .VideosContainer VIDEO{
     border: 1px solid transparent;
     border-radius: 7px;
     object-fit: contain;
     background-color: #000000;
-    z-index: 998;
+    /* z-index: 998; */
 
     box-sizing: border-box;
     width: 100%;
@@ -1433,7 +1433,7 @@ input[type=range]{
 }
 
 .CallControlContainer{
-    z-index: 99;    /* Under Windows */
+    /* z-index: 99;    Under Windows */
     text-align: center;
     position: absolute;
     bottom: 0px;

@@ -1,15 +1,15 @@
 
 import React, { useState } from 'react';
 
-const ShowContacts = () => {
-    console.log("Show contacts");
-}
+// const ShowContacts = () => {
+//     console.log("Show contacts");
+// }
 
 
 
-const onChange = () => {
-    console.log("toggle heading");
-}
+// const onChange = () => {
+//     console.log("toggle heading");
+// }
 
 export const ShowMyProfile = () => {
     const [ConfigureExtension, setConfigureExtension] = useState(false);
@@ -17,22 +17,33 @@ export const ShowMyProfile = () => {
     const ToggleHeading = (htmlText) => {
 
         if (htmlText == 'Configure_Extension_Html')
-            setConfigureExtension(!ConfigureExtension);
+            setConfigureExtension(ConfigureExtension => !ConfigureExtension);
         console.log("toggle Configure_Extension_Html");
     }
 
 
     return (
         <div id="actionArea">
-            <div style={{ textAlign: "right" }}><button className="roundButtons" onClick={() => ShowContacts()}><i className="fa fa-close"></i></button></div>
+            <div style={{ textAlign: "right" }}><button className="roundButtons" onClick={() =>{
+                console.log("toggle heading"); ShowContacts()}
+        }><i className="fa fa-close"></i></button></div>
 
             <div border="0" className="UiSideField">
 
                 {/* // SIP Account */}
-                {EnableAccountSettings == true ? (
-                    <div className="UiTextHeading" onClick={() => ToggleHeading('Configure_Extension_Html')}><i className="fa fa-user-circle-o UiTextHeadingIcon" style={{ backgroundColor: "#a93a3a" }}></i> {lang.account}</div>
-                ) : ""}
-                <div id="Configure_Extension_Html" style={{ display: ConfigureExtension ? "unset" : "none" }}>
+                {/* {EnableAccountSettings == true ? ( */}
+                    <div className="UiTextHeading" style={{ 
+        padding: 20, 
+        backgroundColor: 'lightblue', 
+         zIndex: 999,
+         //position: 'relative'
+         }} onClick={(event) =>{
+                        console.log("toggle heading");
+                        ToggleHeading('Configure_Extension_Html')}}><i className="fa fa-user-circle-o UiTextHeadingIcon" style={{ backgroundColor: "#a93a3a" }}></i> {lang.account}</div>
+                {/* // ) : ""} */}
+                <div id="Configure_Extension_Html" 
+                style={{ display: ConfigureExtension ? "unset" : "none" }}
+                >
                     <div className="UiText">{lang.asterisk_server_address}:</div>
                     <div><input id="Configure_Account_wssServer" className="UiInputText" onChange={() => onChange()} type="text" placeholder={lang.eg_asterisk_server_address} value={getDbItem("wssServer", "")} /></div>
 
@@ -210,3 +221,40 @@ export const ShowMyProfile = () => {
 
     )
 }
+
+// export const ShowMyProfile = () => {
+//     const [ConfigureExtension, setConfigureExtension] = useState(false);
+
+//         const ToggleHeading = (htmlText) => {
+
+//         if (htmlText == 'Configure_Extension_Html')
+//             setConfigureExtension(ConfigureExtension => !ConfigureExtension);
+//         console.log("toggle Configure_Extension_Html");
+//     }
+//     return (
+//       <div className="UiTextHeading"
+//        style={{ 
+//         padding: 20, 
+//         // backgroundColor: 'lightblue', 
+//         // zIndex: 999,
+//          position: 'relative'
+//          }}
+//        >
+//         <button onClick={() => {
+//             console.log('MyProfile button clicked')
+
+// ToggleHeading('Configure_Extension_Html');
+//         }}><i className="fa fa-user-circle-o UiTextHeadingIcon" style={{ backgroundColor: "#a93a3a" }}></i>{lang.account}</button>
+//       </div>
+//     )
+
+
+//   }
+
+  /* <div className="UiTextHeading" onClick={(event) =>{
+                            console.log("toggle heading");
+                            ToggleHeading('Configure_Extension_Html')}}><i className="fa fa-user-circle-o UiTextHeadingIcon" style={{ backgroundColor: "#a93a3a" }}></i> {lang.account}</div>
+                     */
+
+      
+                    
