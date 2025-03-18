@@ -7,20 +7,20 @@ const InitUI = () => {
             <div id="leftContent" className="leftContent" style={{ "float:left; height: 100%; width:320px"}}>
 
                 <table id="leftContentTable" class="leftContentTable" style="height:100%; width:100%" cellspacing="0" cellpadding="0">
-                    <tr><td class="streamSection" style="height: 50px; box-sizing: border-box;">";
+                    <tr><td class="streamSection" style="height: 50px; box-sizing: border-box;">
 
 
                         <div class="profileContainer">
 
-                            <div class="contact" id="UserProfile" style="cursor: default; margin-bottom:5px;">";
+                            <div class="contact" id="UserProfile" style="cursor: default; margin-bottom:5px;">
 
-                                <span id="TxtVoiceMessages" class="voiceMessageNotifyer">0</span>"
-                                <div id="UserProfilePic" class="buddyIcon"></div>";
+                                <span id="TxtVoiceMessages" class="voiceMessageNotifyer">0</span>
+                                <div id="UserProfilePic" class="buddyIcon"></div>
 
 
                                 <span class="settingsMenu">
-                                    <button class="roundButtons" id="BtnFreeDial"><i class="fa fa-phone"></i></button>";
-                                    <button class="roundButtons" id="BtnAddSomeone"><i class="fa fa-user-plus"></i></button>";
+                                    <button class="roundButtons" id="BtnFreeDial"><i class="fa fa-phone"></i></button>
+                                    <button class="roundButtons" id="BtnAddSomeone"><i class="fa fa-user-plus"></i></button>
                                     {false}
 
                                     (<button id="BtnCreateGroup"><i class="fa fa-users"></i><i class="fa fa-plus" style="font-size:9px"></i></button>)
@@ -47,7 +47,15 @@ const InitUI = () => {
 
 
                         <span id="divFindBuddy" class="searchClean"><input id="txtFindBuddy" type="text" autocomplete="none" style="width: calc(100% - 78px);" /></span>
-                        <button class="roundButtons" id="BtnFilter" style="margin-left:5px"><i class="fa fa-sliders"></i></button>"
+                        <button class="roundButtons" id="BtnFilter" style={{marginLeft:"5px"}} onClick={()=>{
+                             if(UiCustomSortAndFilterButton == true){
+                                if(typeof web_hook_sort_and_filter !== 'undefined') {
+                                    web_hook_sort_and_filter(event);
+                                }
+                            } else {
+                                ShowSortAnfFilter();
+                            }
+                        }}><i class="fa fa-sliders"></i></button>"
 
                     </td></tr>
                     <tr><td class="streamSection">
